@@ -1,3 +1,4 @@
+// 响应式原理部分
 class Dep {
   constructor() {
     this.subscribers = new Set()
@@ -36,7 +37,7 @@ const getDep = (target, key) => {
 }
 
 //vue2方式实现数据代理
-const reactive1 = (target) => {
+const reactive2 = (target) => {
   Object.keys(target).forEach(key => {
     let value = target[key];
     const dep = getDep(target, key);
@@ -55,7 +56,7 @@ const reactive1 = (target) => {
 }
 
 //vue3方式实现数据代理
-const reactive2 = (raw) => {
+const reactive3 = (raw) => {
   return new Proxy(raw, {
     get(target, key, receiver) {
       const value = target[key];

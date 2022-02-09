@@ -1,3 +1,4 @@
+//渲染函数部分
 const h = (type, props, children) => {
   return {
     type,
@@ -117,27 +118,3 @@ const patch = (n1, n2) => {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
